@@ -16,19 +16,32 @@
   </div>
 </nav>
 
+<!--  3. 본문에서 사용한다 -->
+
+
 <div class="intorduce">
    <h1>Vue 튜토리얼 블로그입니다 </h1>
    <p> - Vue 스터디중 </p>
+   
 </div>
- 
+
+<List :블로그글="블로그글" />
+
 </template>
 
 <script>
+import List from './components/articleList.vue';  // 1. Import를 먼저 하고
+import article from './assets/blogArticle.js';
 
 export default {
   name: 'App',
+  data(){
+    return{
+      블로그글 : article
+    }
+  },
   components: {
-
+    List : List,  //2. 등록을 하고
   }
 }
 </script>
